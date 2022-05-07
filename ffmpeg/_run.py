@@ -25,8 +25,8 @@ except ImportError:
 
 class Error(Exception):
     def __init__(self, cmd, stdout, stderr):
-        super(Error, self).__init__(
-            '{} error (see stderr output for detail)'.format(cmd)
+        super().__init__(
+            '{} error ({})'.format(cmd, stderr)
         )
         self.stdout = stdout
         self.stderr = stderr
